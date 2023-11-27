@@ -1,0 +1,170 @@
+hooks => useState
+//destructure useState
+const [state, setState] = useState(initialValue)
+state =>previous value
+setState => currentValue
+
+
+state => 
+state of art of technology => top tech
+state of mind => wats running in your mind
+
+state => current scenario
+
+
+   {/* {people.map((personName) => (
+        <Welcome name={personName} />
+      ))} */}
+      {/* <Counter /> */}
+      {/* {users.map((usr) => (
+        <Welcome name={usr.name} age={usr.age} />
+      ))} */}
+      {/* // profile pic and name => task */}
+
+
+       {/* <Msg
+        name="jack"
+        pic="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
+      />
+      <Msg
+        name="john"
+        pic="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"
+      />
+      <Msg
+        name="peter"
+        pic="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      /> */}
+      {/* <h1>Hello {name}</h1>
+      <h1>Welcome {name1}</h1> */}
+      {/* <Welcome name="jack" age="20" />
+      <Welcome name="john" age="22" />
+      <Welcome name="peter" age="25" /> */}
+      {/* <Msg username="Mick" /> */}
+
+
+
+      
+//{} => template syntax
+//SPA => index.html
+//Webpack +babel
+
+//JSX => Javascript XML /extended
+//class in JS  => reserved keyword
+
+//Types of component
+// 1. functional component
+// 2. class component
+
+//custom component
+// 1.First letter must be capital
+// 2. It return  a JSX element
+
+//<> </> => Fragment
+
+// {
+//   data.map((item) => (
+//     <Card icon={item.icon} name={item.name} />
+//   ))
+// }
+
+
+
+// card({icon, name}){
+//   return (
+//     <i class={icon}></i>
+//     <span>{name}</span>
+//   )
+// }
+
+
+
+const name = "Jack";
+  const name1 = "John";
+
+  const users = [
+    {
+      name: "jack",
+      age: "20"
+    },
+    {
+      name: "john",
+      age: "22"
+    },
+    {
+      name: "peter",
+      age: "25"
+    },
+    {
+      name: "mick",
+      age: "30"
+    }
+  ];
+
+  const profile = [
+    {
+      name: "jack",
+      pic:
+        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
+    },
+    {
+      name: "john",
+      pic: "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"
+    },
+    {
+      name: "peter",
+      pic:
+        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    }
+  ];
+
+  const people = ["Deepak", "Ravi", "HariShri", "Raja", "jeyachandran"]//Array of strings
+
+
+
+   {/* {profile.map((profile) => (
+        <Msg name={profile.name} picture={profile.pic} />
+      ))} */}
+      
+
+
+ ProductList (data) -> Product  (data) -> Counter    (data)
+
+                           -> Contact (data)
+
+
+  React flows in one direction  | Pass data from parent to child ✅    
+  Pass data from child to parent ❌                      
+
+
+
+             App (🏔️) (productList, setProductList)
+
+
+
+
+ ProductList (🌊)     ProductDetails (🌊)       
+
+
+   {/* <nav>
+        <ul>
+          <li>
+            Link changes page without refresh
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/products">ProductList</Link>
+          </li>
+          <li>
+            <Link to="/products/add">Add Product</Link>
+          </li>
+          <li>
+            <Link to="/color-game">AddColor</Link>
+          </li>
+          <li>
+            <Link to="/profile">UserList</Link>
+          </li>
+          <li>
+            <Link to="/somewhere">Somewhere</Link>
+          </li>
+        </ul>
+      </nav> */}
