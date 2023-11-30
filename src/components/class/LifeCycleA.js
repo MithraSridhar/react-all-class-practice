@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LifeCycleB from './LifeCycleB';
-import Statefull from './Statefull';
+import { StateLess } from './StateLess'
+import StateFull from './StateFull'
 
 class LifeCycleA extends Component {
 
@@ -33,8 +34,10 @@ componentDidMount(){
             <div>
                 ClassComponent
                 <h1>My name is {this.state.name}</h1>
-                {/* <LifeCycleB/> */}
-            <Statefull/>
+                <LifeCycleB/>
+                <h1>StateLess</h1>
+                <StateLess />
+                <StateFull />
             </div>
         );
     }
