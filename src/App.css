@@ -78,3 +78,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.cart-length{
+  text-align: center;
+}

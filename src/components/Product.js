@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import InfoIcon from '@mui/icons-material/Info';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export function Product({ product, id ,deleteButton,editButton}) {
+export function Product({ product, id ,deleteButton,editButton,addCartItem}) {
 
   const [show, setShow] = useState(true);
   const styles = {
@@ -49,6 +49,7 @@ export function Product({ product, id ,deleteButton,editButton}) {
       <div className="counter-style">
         {deleteButton}
         {editButton}
+        {addCartItem}
       {/* <IconButton aria-label="deletebtn" color="error" >
       <DeleteIcon />
       </IconButton> */}

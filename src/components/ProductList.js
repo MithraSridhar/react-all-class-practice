@@ -8,10 +8,18 @@ import IconButton from '@mui/material/IconButton';
 import { API } from '../global';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
+import {useDispatch} from "react-redux"
+import { addItem } from '../utils/CartSlice';
 
 export function ProductList() {
   // const productList = INITIAL_PRODUCT_LIST;
   const [productList, setProductList] = useState([])
+
+  const dispatch = useDispatch()
+
+  const handleAddItem =(product) =>{
+    dispatch(addItem(product))
+  }
 
   const navigate = useNavigate();
 
@@ -71,13 +79,19 @@ export function ProductList() {
               <DeleteIcon/>
               </IconButton>
           } 
-
               
           editButton={
             <IconButton color='secondary' onClick={()=>navigate(`/products/edit/${pd.id}`)}>
              <EditIcon/>
              </IconButton>
-         } />
+         } 
+         
+         addCartItem={
+          <Button  variant ="contained" color="success" 
+          onClick={()=>handleAddItem(pd)}
+          >Add To Cart</Button>
+         }
+         />
         ))}
         
       </div>

@@ -21,6 +21,11 @@ import TicTacToe from './components/TicTacToe';
 import UpdateProduct from './components/UpdateProduct';
 import LifeCycleA from './components/class/LifeCycleA';
 import EditProduct from './components/EditProduct';
+import BasicForm from './components/formik/BasicForm';
+import { Cart } from './components/Cart';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import IconButton from '@mui/material/IconButton';
+import {  useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const INITIAL_PRODUCT_LIST = [
   {
@@ -127,6 +132,12 @@ export const INITIAL_PRODUCT_LIST = [
 ]
 
 function App() {
+  //useSelector((state)) => state.reducerNAme.SliceName-initial value name
+  //We use useSelector to select the state we want
+
+ const cartItems= useSelector(((state)=>state.cart.items))
+ console.log("cartItems is ",cartItems)
+
   //Lifting the state up => lifted from child to parent
   const [productList, setProductList] = useState([])
   const [mode, setMode] = useState("light")
@@ -148,6 +159,7 @@ function App() {
   const navigate = useNavigate()
 
   return (
+   
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
@@ -164,7 +176,15 @@ function App() {
             <Button color="inherit" onClick={() => navigate("/tictactoe")}>TicTacToe</Button>
             <Button color="inherit" onClick={() => navigate("/update")}>Update Product</Button>
             <Button color="inherit" onClick={() => navigate("/class")}>Class</Button>
-            <Button sx={{ marginLeft: "45%" }} color="inherit" onClick={() => setMode(mode === "light" ? "dark" : "light")}
+            <Button color="inherit" onClick={() => navigate("/basicform")}>BasicForm</Button>
+            <Button color="inherit" onClick={() => navigate("/cart")}>Cart
+            <IconButton aria-label="info">
+              <ShoppingCartIcon />
+              {cartItems.length}
+            </IconButton>            
+            </Button>
+            {/* sx={{ marginLeft: "45%" }}  */}
+            <Button color="inherit" onClick={() => setMode(mode === "light" ? "dark" : "light")}
               endIcon={mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
               {mode === "light" ? "dark" : "light"} Mode</Button>
 
@@ -176,7 +196,7 @@ function App() {
           <Route path="/products/:productid" element={<ProductDetails productList={productList} />} />
           <Route path="/products/add" element={<AddProduct />} />
           <Route path="/products/edit/:productid" element={<EditProduct />} />
-
+          <Route path="/cart" element={<Cart />} />
           <Route path="/color-game" element={<AddColor />} />
           <Route path="/profile" element={<UserList />} />
           <Route path="/example" element={<Example />} />
@@ -186,12 +206,13 @@ function App() {
           <Route path="/update" element={<UpdateProduct />} />
           <Route path="/class" element={<LifeCycleA />} />
           <Route path="/items" element={<Navigate replace to="/products" />} />
-
+          <Route path="/basicform" element={<BasicForm />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate replace to="/404" />} />
         </Routes>
       </div>
     </ThemeProvider>
+  
   );
 
 }
